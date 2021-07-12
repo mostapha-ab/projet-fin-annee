@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="/static/login.css">
+    </head>
+    <body>
+        <!------------------------------------->
+        <nav>
+            <div class="conatiner-nav">
+                <div class="left-nav">
+                    <a id="logo" href="{{ url_for('home') }}"><img src="/static/images/LogoWhiteVersion.png" alt=""></div><a>
+                </div>
+                <div class="right-nav">
+                    <ul>
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('sign') }}">Sign In</a></li>
+                        <li><a href="{{ url_for('login') }}">Log in</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!----------------------------------------------------->
+        
+        <div class="signIn">
+            <div class="sign-container">
+                <form action="" method="POST">
+                    <h2 class="header">Log In</h2>
+                    <label for="name">Name or Email:
+                        <input type="text" name="name" placeholder="Name or Email:" id="name" value="">
+                    </label>
+
+                    <label for="password">Password:
+                        <input type="password" name="password" placeholder="Enter Your Name:" id="password" value="">
+                    </label>
+
+                    <input type="submit" value="Sign In">
+            </form>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container-footer">
+                <div class="footer-link">
+                    <h4>Web site map</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Sign in</a></li>
+                        <li><a href="#">Log in</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-link">
+                    <h4>Privarcy & Police</h4>
+                    <ul>
+                        <li><a href="#">Notre réseau de partenaires.</a></li>
+                        <li><a href="#">Autres écoles et formations</a></li>
+                        <li><a href="#">Notre réseau de partenaires</a></li>
+                        <li><a href="#">Autres écoles et formations.</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-link">
+                    <img class="logo" src="/static/images/LogoWhiteVersion.png" alt="">
+                    <div class="link-icon">
+                        <a href="#"><img src="/static/icon/Facebook_Rounded_icon-icons.com_61578 2.png" alt=""></a>
+                        <a href="#"><img src="/static/icon/google_icon-icons.com_62736 1.png" alt=""></a>
+                        <a href="#"><img src="/static/icon/google_icon-icons.com_62736 1.png" alt=""></a>
+                        <a href="#"><img src="/static/icon/Twitter_Rounded_icon-icons.com_61577 (1) 2.png" alt=""></a>
+                    </div>
+                </div>
+
+
+            </div>
+        </footer>
+
+    </body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Free School Management School">
+        <meta name="author" content=" Mehdi Hyad ,Mustapha abraim">
+        <meta name="keywords" content="school management, school data management">
+        <title>Solutions</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    
+    <body>
+        <nav>
+            <div class="conatiner-nav">
+                <div class="left-nav">
+                    <a id="logo" href="{{ url_for('home') }}"><img src="/static/images/LogoWhiteVersion.png" alt=""></div><a>
+                </div>
+                <div class="right-nav">
+                    <ul>
+
+                        {% if "name" in session%}
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                        {% endif %}
+
+                        
+                        {% if "name" not in session %}
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                            <li><a href="{{ url_for('sign') }}">Sign In</a></li>
+                            <li><a href="{{ url_for('login') }}">Log in</a></li>
+                        {% endif %}
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="main">
+            <div class="main-container">
+                <div class="hero-text">
+                    <h2>MANAGE YOUR SCHOOL</h2>
+                    <h2>SYSTEME WITH US</h2>
+                </div>
+                <div class="hero-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                    Lorem ipsum dolor sit  incididunt ut e magna 
+                </div>
+                {% if "name" in session%}
+                    <a href="{{ url_for('dashboard') }}" class="hero-cta">Start With Us</a>
+                {% else%}
+                    <a href="{{ url_for('sign') }}" class="hero-cta">Start With Us</a>
+                {% endif%}
+                </div>
+        </div>
+
+        <section class="feauture1">
+            <div class="container-feau1">
+
+                <div class="left-feau">
+                    <h3 class="header-feau1">AlumnForce, une équipe d'experts à votre disposition</H3>
+                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, doloremque. Dolores quam id, velit rerum quia expedita odit sequi dicta porro ab. Cum obcaecati placeat eaque ullam, aut dolorem labore numquam, distinctio consequuntur illum incidunt mollitia quis fuga doloremque consequatur. Non, omnis. Commodi vero iusto nulla et consectetur quam eveniet!</p>
+                    <a href="#">Contact</a>
+                </div>
+
+                <div class="image-feau">
+                </div>
+            </div>
+        </section>
+
+        <!------------------------------>
+
+        <section class="feauture2">
+            <div class="container-feau2">
+                <div class="right-feau2">
+                </div>
+                <div class="left-feau">
+                    <h3 class="header-feau1">AlumnForce, une équipe d'experts à votre disposition</H3>
+                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, doloremque. Dolores quam id, velit rerum quia expedita odit sequi dicta porro ab. Cum obcaecati placeat eaque ullam, aut dolorem labore numquam, distinctio consequuntur illum incidunt mollitia quis fuga doloremque consequatur. Non, omnis. Commodi vero iusto nulla et consectetur quam eveniet!</p>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="services">
+            <div class="card">
+                <div class="container-card">
+                    <img src="/static/images/icon.png" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quod, nobis corrupti eum excepturi minus unde veritatis esse consectetur voluptas culpa aliquid corporis. Consequatur cupiditate possimus, nihil voluptates quo nobis?</p>
+                    <a href="#">More ></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="container-card">
+                    <img src="/static/images/icon.png" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quod, nobis corrupti eum excepturi minus unde veritatis esse consectetur voluptas culpa aliquid corporis. Consequatur cupiditate possimus, nihil voluptates quo nobis?</p>
+                    <a href="#">More ></a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="container-card">
+                    <img src="/static/images/icon.png"  alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quod, nobis corrupti eum excepturi minus unde veritatis esse consectetur voluptas culpa aliquid corporis. Consequatur cupiditate possimus, nihil voluptates quo nobis?</p>
+                    <a href="#">More ></a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container-footer">
+                <div class="footer-link">
+                    <h4>Web site map</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Sign in</a></li>
+                        <li><a href="#">Log in</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-link">
+                    <h4>Privarcy & Police</h4>
+                    <ul>
+                        <li><a href="#">Notre réseau de partenaires.</a></li>
+                        <li><a href="#">Autres écoles et formations</a></li>
+                        <li><a href="#">Notre réseau de partenaires</a></li>
+                        <li><a href="#">Autres écoles et formations.</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-link">
+                    <img class="logo" src="/static/images/LogoWhiteVersion.png" alt="">
+                    <div class="link-icon">
+                        <a href="#"><img src="/static/icon/Facebook_Rounded_icon-icons.com_61578 2.png" alt=""></a>
+                        <a href="#"><img src="/static/icon/google_icon-icons.com_62736 1.png" alt=""></a>
+                        <a href="#"><img src="/static/icon/Twitter_Rounded_icon-icons.com_61577 (1) 2.png" alt=""></a>
+                    </div>
+                </div>
+
+
+            </div>
+        </footer>
+
+
+    </body>
+</html>

@@ -1,0 +1,117 @@
+{% from "_formhelpers.html" import render_field %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard_User</title>
+        <link rel="stylesheet" href="/static/dashboard.css">
+    </head>
+    <body>
+        <nav>
+            <div class="conatiner-nav">
+                <div class="left-nav">
+                    <a id="logo" href="{{ url_for('home') }}"><img src="/static/images/LogoWhiteVersion.png" alt=""></div><a>
+                </div>
+                <div class="right-nav">
+                    <ul>
+                        <li><a href="{{ url_for('dashboard') }}"><img src="/static/icon/dashboard.png" alt=""></a></li>
+                        <li><a href="{{ url_for('msg') }}"><img src="/static/icon/message.png" alt=""></a></li>
+                        <li><a href="{{ url_for('logout') }}" ><img src="/static/icon/LOGOUT.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!----------------------------------------------------->
+        <h2 class="greating"> What's up {{session.get("name")}}</h2>
+        <!--------------->
+        <main>
+            <div class="main-container">
+                {% if session.get("gender") == 'Male' %}
+                <img class="image-men" src="/static/images/studentBoy.jpg" alt="" >
+                {% endif%}
+
+                {% if session.get("gender") == "Female" %}
+                <img class="left" src="/static/icon/theisen_tarra.jpg" alt="">
+                {% endif%}
+                <form action="" method="POST">
+                    <dl>
+                        {{ form.csrf_token }}
+                        {{ render_field(form.editname) }}
+                        {{ render_field(form.editville) }}
+                        {{ render_field(form.editstatus) }}
+                        {{ render_field(form.editemail) }}
+                        {{ render_field(form.editpassword) }}
+                      </dl>
+                      <p><input type=submit value=Save>
+                </form>
+            </div>
+        </main>
+
+
+<!----------------------------------------------------->
+
+
+<div class="cards">
+            
+    <div class="card">
+        <img src="/static/icon/Twitter_Rounded_icon-icons.com_61577 (1) 2.png" alt="">
+        <p>10,000 followers</p>
+    </div>
+
+    <div class="card">
+        <img src="/static/icon/google_icon-icons.com_62736 1.png" alt="">
+        <p>10,000 followers</p>
+    </div>
+
+    <div class="card">
+        <img src="/static/icon/Facebook_Rounded_icon-icons.com_61578 2.png" alt="">
+        <p>10,000 followers</p>
+    </div>
+
+</div>
+
+
+
+<!----------------------------------------------------->
+
+<footer>
+    <div class="container-footer">
+        <div class="left-container">
+            <div>
+                <h3>Stay</h3>
+                <h3>In Touch</h3>
+            </div>
+            <div class="icons">
+                <img src="/static/icon/Facebook_Rounded_icon-icons.com_61578 2.png" alt="">
+                <img src="/static/icon/google_icon-icons.com_62736 1.png" alt="">
+                <img src="/static/icon/Twitter_Rounded_icon-icons.com_61577 (1) 2.png" alt="">
+                <img src="/static/icon/google_icon-icons.com_62736 1.png" alt="">
+                <img src="/static/icon/Facebook_Rounded_icon-icons.com_61578 2.png" alt="">
+            </div>
+        </div>
+        <img class="logo-footer" src="/static/icon/Group 36.png" alt="">
+
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </body>
+</html>

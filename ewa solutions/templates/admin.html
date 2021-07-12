@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin</title>
+        <link rel="stylesheet" href="/static/admin.css">
+        <link rel="icon" href="/static/images/LogoWhiteVersion.png">
+    </head>
+    <body>
+        <nav>
+            <div class="conatiner-nav">
+                <div class="left-nav">
+                    <a id="logo" href="{{ url_for('home') }}"><img src="/static/images/LogoWhiteVersion.png" alt=""></div><a>
+                </div>
+                <div class="right-nav">
+                    <ul>
+                        <li><a href="{{ url_for('admin') }}"><img src="/static/icon/dashboard.png" alt=""></a></li>
+                        <li><a href="{{ url_for('logout') }}" ><img src="/static/icon/LOGOUT.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!------------------------------------------>
+        <div class="greating">
+            <div  class="greating-container">
+                <h1>Good Morning, Sir</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+            </div>
+        </div>
+
+
+
+        <div class="statistic">
+            <div class="statistic-container">
+
+                <div class="stat1">
+                    <div class="web">
+                        <img src="/static/images/statistic.png" alt="">
+                        
+                        {% if session.get('numbersDev') == 0 %}
+                            <p>00</p>
+
+                        {% elif session.get("numbersDev") < 10 %}
+                            <p>0{{session.get("numbersDev")}}</p>
+
+
+                        {% elif session.get("numbersDev") >= 10 %}
+                            <p>{{session.get("numbersDev")}}</p>
+
+                        {% endif %}    
+                        <h1>Web Developpement</h1>
+                    </div>
+                    <!------------------------->
+                    <div class="line1">
+                        <div class="part1">
+                            <p>Males Dev</p>
+                            <p>{{session.get("percDevMale")}}%</p>
+                        </div>
+                        <div class="part1">
+                            <p>Females Dev</p>
+                            <p>{{session.get("percDevFemale")}}%</p>
+                        </div>
+                    </div>
+                    <!------------------------->
+                    <div class="line1">
+                        <div class="part1">
+                            <p>Employers</p>
+                            <p class="numbers">#{{session.get("employersDev")}}</p>
+                        </div>
+                    <!------------------------>
+                        <div class="part1">
+                            <p>Freelancers</p>
+                            <p  class="numbers">#{{session.get("FreelanceDev")}}</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="stat1">
+    
+                    <div class="web">
+                        <img src="/static/images/statistic.png" alt="">
+
+                        {% if session.get('numbersDes') == 0 %}
+                            <p>00</p>
+
+                        {% elif session.get("numbersDes") < 10 %}
+                            <p>0{{session.get("numbersDes")}}</p>
+
+
+                        {% elif session.get("numbersDes") >= 10 %}
+                            <p>{{session.get("numbersDes")}}</p>
+                            
+                        {% endif %}
+
+                        <h1>Web Design</h1>
+                    </div>
+                    <!------------------------->
+                    <div class="line1">
+                        <div class="part1">
+                            <p>Males Des</p>
+                            <p>{{session.get("percDesMale")}}%</p>
+                        </div>
+                        <div class="part1">
+                            <p>Female Des</p>
+                            <p>{{session.get("percDesFemale")}}%</p>
+                        </div>
+                    </div>
+                    <!------------------------->
+                    <div class="line1">
+                        <div class="part1">
+                            <p>Employers</p>
+                            <p class="numbers">#{{session.get("employersDes")}}</p>
+                        </div>
+                    <!------------------------>
+                        <div class="part1">
+                            <p>Freelancers</p>
+                            <p  class="numbers">#{{session.get("FreelanceDes")}}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!------------------------------------>
+        <div id="row"></div>
+        <div class="student">
+            <div class="container-student">
+                <h1>All Ewa Students</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+            </div>
+        </div>
+
+        <a href="#row"><img class="row" src="/static/images/row.png" alt=""></a>
+
+        <div class="user">
+
+            {% for user in users%}
+            <!------------------->
+            <div class="user-container">
+                
+                <div class="user1">
+                    
+                    {% if user.gender == "Female"%}
+                    <img src="/static/images/profile.png" alt="">
+                    {% else%}
+                    <img src="/static/images/poafile1.png" alt="">
+                    {% endif%}
+                    
+                    <div class="box1">
+                        <p><span>name: </span>{{user.name}}</p>
+                        <p><span>Ville: </span>{{user.ville}}</p>
+                    </div>
+
+                    <div class="box1">
+                        <p><span>Satus: </span>{{user.status}}</p>
+                        <p><span>Gender: </span> {{user.gender}}</p>
+                    </div>
+
+                    <div class="box1">
+                        <p><span>Field: </span>{{user.field}}</p>
+                        <p><span>Ville: </span>{{user.ville}}</p>
+                    </div>
+                </div>
+                <a href="/admin/{{user.id}}"><img class="remove" src="/static/icon/1486564399-close_81512.svg" alt="remove-icon"></a>
+            </div>
+
+            {% endfor%}
+
+
+        </div>
+
+
+        <footer>
+            <div class="container-footer">
+                <div class="footer-link">
+                    <h4>Web site map</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Sign in</a></li>
+                        <li><a href="#">Log in</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-link">
+                    <h4>Privarcy & Police</h4>
+                    <ul>
+                        <li><a href="#">Notre réseau de partenaires.</a></li>
+                        <li><a href="#">Autres écoles et formations</a></li>
+                        <li><a href="#">Notre réseau de partenaires</a></li>
+                        <li><a href="#">Autres écoles et formations.</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-link">
+                    <img class="logo" src="/static/images/LogoWhiteVersion.png" alt="">
+                    <div class="link-icon">
+                        <a href="#"><img src="/static/icon/Facebook_Rounded_icon-icons.com_61578 2.png" alt=""></a>
+                        <a href="#"><img src="/static/images/Skype_Rounded_icon-icons.com_61570 1.png" alt=""></a>
+                        <a href="#"><img src="/static/icon/google_icon-icons.com_62736 1.png" alt=""></a>
+                        <a href="#"><img src="/static/icon/Twitter_Rounded_icon-icons.com_61577 (1) 2.png" alt=""></a>
+                    </div>
+                </div>
+
+
+            </div>
+        </footer>
+        
+    </body>
+</html>

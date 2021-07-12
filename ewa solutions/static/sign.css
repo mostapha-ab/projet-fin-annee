@@ -1,0 +1,259 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+nav{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #291B8B;
+    position: fixed;
+    top: 0px;
+    z-index: 4;
+}
+
+#logo img{
+    width: 300px;
+}
+
+.conatiner-nav{
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.right-nav ul , .right-nav li , .right-nav a{
+    display: inline;
+    color: rgb(231, 231, 231);
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.right-nav a{
+    margin:0px 12px;
+}
+
+.right-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*--------------------end of nav---------------*/
+
+.signIn{
+    width: 100%;
+    height: 800px;
+    background-image: url(/static/images/Group\ 91.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 50px;
+}
+
+
+.sign-container{
+    width: 700px;
+    height: 900px;
+    background-image: url(/static/images/shapes.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/**/
+
+label{
+    font-family: sans-serif;
+}
+
+
+
+form {
+    width: 65%;
+    height: 670px;
+    border: 2px solid green;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 10px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 6px 30px rgba(2, 58, 133, 0.18);
+    padding-bottom: 20px 0px;
+}
+
+
+form:hover{
+    transform: translateY(-20px);
+    transition: 0.5s ease-in-out;
+
+}
+
+.header{
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: #10016e;
+}
+
+dd {
+    font-family: sans-serif;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 8px 0px;
+}
+
+dd input {
+    padding: 10px 80px;
+    outline: none;
+    border: 2px solid #8F8F8F;
+    border-radius: 3px;
+}
+
+dd input:focus{
+    border:  2px solid #3a28af;
+}
+
+
+select {
+    padding: 4px 0px;  
+    margin: 0;
+    width: 100%;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+}
+
+select:focus{
+    border:  1px solid #3a28af;
+    transition: 0.3s ease-in;
+    border-radius: 3px;
+}
+
+option {
+    font-size: 20px;
+}
+
+input[type=submit]{
+    padding: 14px 138px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: #291B8B;
+    font-size: 16px;
+}
+
+
+
+/*-----------------------------------------------*/
+
+footer{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #100656;
+    position: relative;
+    top: 100%;
+}
+
+
+.container-footer{
+    width: 2000px;
+    height: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer ul , footer li , footer a , footer h4{
+    text-decoration: none;
+    font-family: sans-serif;
+    text-decoration: none;
+    display: inline;
+    color: #CFCFCF;
+    margin: 5px 0px;
+}
+
+footer ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+footer h1{
+    color: white;
+    font-size: 28px;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+.logo{
+    width: 460px;
+}
+
+
+.footer-link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.footer-link:last-child{
+    justify-content: center;
+    align-items: center;
+}
+
+.link-icon{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 90px;
+}
+
+.link-icon img{
+    margin: 0px 8px;
+    width: 45px;
+    margin: 0px 5px;
+}
+
+
+
+.link-icon img:hover{
+    transform: translateY(-5px);
+    transition: 0.2s ease-in-out;
+}
+
+.logo-footer{
+    width: 150px;
+    height: auto;
+}
